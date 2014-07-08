@@ -24,7 +24,6 @@ public class E {
 	}
 	
 	static void func(int x, int y){
-		System.out.println("func("+x+","+y+")");
 		check(x,y);
 		for(int i=1;i<=9;i++){
 			if(!can[i])
@@ -34,12 +33,13 @@ public class E {
 			if(p == null){
 				for(int ai=0;ai<9;ai++){
 					for(int bi=0;bi<9;bi++){
-						System.out.println(arr[ai][bi]);
+						System.out.print(arr[ai][bi]);
 					}
 					System.out.println();
 				}
 				return;
 			}
+			System.out.println("func("+p.x+","+p.y+"), "+arr[x][y]);
 			func(p.x, p.y);
 			arr[x][y] = 0;
 		}
@@ -64,7 +64,7 @@ public class E {
 		}
 		int r0 = i / 3 * 3;
 		int c0 = j / 3 * 3;
-		for(int di=0;i<3;i++){
+		for(int di=0;di<3;di++){
 			for(int dj=0;dj<3;dj++){
 				if(arr[r0+di][c0+dj]>0)
 					can[arr[r0+di][c0+dj]] = false;
